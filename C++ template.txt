@@ -1,0 +1,89 @@
+/*Himanshu Pathak
+@himpat202*/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define IOS  ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define ll long long
+const int mod=1000000007;
+#define pb push_back
+#define bs binary_search
+#define up upper_bound
+#define  lb lower_bound
+#define ppb               pop_back
+#define pf                push_front
+#define ppf               pop_front
+#define all(x)            (x).begin(),(x).end()
+#define ppc               __builtin_popcount
+#define ppcll             __builtin_popcountll
+#ifdef ONLINE_JUDGE
+#define cerr if (false) cerr
+#endif 
+
+bool prime[100005];
+
+void sieve()
+{
+    memset(prime,1,sizeof(prime));
+
+    prime[0]=prime[1]=0;
+    for(int i=4; i<=100005; i+=2)
+        prime[i]=0;
+
+    for(int i=3; i<=100005; i+=2)
+    {
+        if(prime[i])
+        {
+            for(int j=i*2; j<=100005; j+=i)
+            {
+                prime[j]=0;
+            }
+        }
+    }
+}
+
+
+typedef long double                                      ld;
+typedef pair <int, int>                                  pii;
+typedef pair <pii, int>                                  ppi;
+typedef pair <int, pii>                                  pip;
+typedef pair <pii, pii>                                  ppp;
+typedef pair <ll, ll>                                    pll;
+ 
+# define A                                               first
+# define B                                               second
+# define endl                                            '\n'
+# define sep                                             ' '
+# define kill(x)                                         return cout << x << endl, 0
+# define SZ(x)                                           int(x.size())
+# define lc                                              id << 1
+# define rc                                              id << 1 | 1
+ 
+ll power(ll a, ll b, ll md) {return (!b ? 1 : (b & 1 ? a * power(a * a % md, b / 2, md) % md : power(a * a % md, b / 2, md) % md));}
+ 
+const int xn = 1e5 + 10;
+const int xm = - 20 + 10;
+const int sq = 320;
+const int inf = 1e9 + 10;
+const ll INF = 1e18 + 10;
+const int base = 257;
+
+int sum() { return 0; }
+template<typename... Args>
+int sum(int a, Args... args) { return a + sum(args...); }
+
+//int sum(){return 0;}
+template<typename T, typename... Args>
+T sum(T a, Args... args) { return a + sum(args...); }
+
+/*void permute(string str)
+{
+    sort(str.begin(), str.end());
+    do {
+       cout << str << endl;
+    } while (next_permutation(str.begin(), str.end()));
+}*/
+//cout << fixed << setprecision(12) << sqrtl(val1) << endl;
+//cout << fixed << setprecision(12) << sqrt(val1) << endl;
+//cout << fixed << setprecision(12) << sqrtf(val1) << endl;
+//pow(x, y)
